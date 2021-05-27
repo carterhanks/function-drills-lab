@@ -156,7 +156,18 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 
 //CODE HERE
 
+function bigOrSmall(arr){
+  let answers = []
+  for (let i = 0; i < bigOrSmallArray.length; i++) {
+  if (arr[i] > 100) {
+    answers.push('big') 
+   } else { 
+  answers.push('small')}
+  }  return answers
+}
+let arrayEvaluator = bigOrSmall(bigOrSmallArray)
 
+console.log(arrayEvaluator)
 
 ////////////////// PROBLEM 10 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -168,6 +179,15 @@ let loser = 'Glimmer'
 
 //CODE HERE
 
+function theEliminator(contestants, loser){
+  for (let i = 0; i < contestants.length; i++){
+  if (contestants[i] === loser)
+  contestants.splice(i, 1)
+  } return contestants
+  }
+  let updatedContestants = theEliminator(contestants, loser)
+
+  console.log(updatedContestants)
 
 ////////////////// PROBLEM 11 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -176,6 +196,12 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+
+function stringFunction(sampleString){
+  console.log(sampleString.toUpperCase())
+}
+stringFunction(sampleString)
+
 
 
 ////////////////// PROBLEM 12 ////////////////////
@@ -186,6 +212,12 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
+function buysFrogs(gold){
+  return gold / 3
+} 
+let totalFrogs = buysFrogs(10)
+
+console.log(totalFrogs)
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -194,6 +226,12 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
+function buysFrogs(gold){
+  return Math.round(gold / 3)
+} 
+let totalFrogs2 = buysFrogs(11)
+
+console.log(totalFrogs2)
 
 ////////////////// PROBLEM 14 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
@@ -203,6 +241,32 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 
 //CODE HERE
 
+// function ascendingOrder(arr){
+//   for (let i = 0; i < sampleArray.length; i++)
+//   if ([0] < [9]){
+//   console.log(true)
+//   } else {
+//     console.log(false)
+//   }
+// }
+// let arrayIsAscending = ascendingOrder()
+// console.log(arrayIsAscending)
+
+function ascendingOrder(arr) {
+  let value = arr[0]
+  for (let i = 1; i < arr.length - 1; i++) {
+    if (arr[i] <= value) {
+      return false
+    } else {
+      value = arr[i]
+    }
+  }
+  return true
+}
+
+let arrayIsAscending = ascendingOrder(sampleArray)
+
+console.log(arrayIsAscending)
 
 ////////////////// PROBLEM 15 ////////////////////
 
@@ -226,13 +290,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['duck']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['duck', 'rubberDuck']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['sailorDuck', 'rubberDuck', 'duck']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['realDuck', 'duck']
